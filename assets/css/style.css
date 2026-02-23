@@ -11,12 +11,7 @@ html, body {
     color: #fff;
     font-family: serif;
     overflow-x: hidden;
-}
-
-/* ================= FORCE HIDE SYSTEM CURSOR ================= */
-
-html, body, a, button, span, div, img {
-    cursor: none !important;
+    cursor: none;
 }
 
 /* ================= CUSTOM CURSOR ================= */
@@ -111,7 +106,6 @@ html.loading, body.loading {
 
 .hamburger {
     width: 28px;
-    cursor: pointer;
 }
 
 .hamburger span {
@@ -163,11 +157,11 @@ html.loading, body.loading {
     background-position: left;
 }
 
-/* ================= HERO ================= */
+/* ================= HOMEPAGE HERO ================= */
 
 .hero {
     height: 100vh;
-    background: url("../../Renders/The_Fiordland_Ascent/CAM1_The_Reflective_Approach.jpg") center/cover no-repeat;
+    background: url("../Renders/The_Fiordland_Ascent/CAM1_The_Reflective_Approach.jpg") center/cover no-repeat;
     position: relative;
     display: flex;
     align-items: center;
@@ -208,7 +202,6 @@ html.loading, body.loading {
 .project-card {
     position: relative;
     overflow: hidden;
-    cursor: pointer;
 }
 
 .project-card img {
@@ -239,6 +232,78 @@ html.loading, body.loading {
     left: 20px;
 }
 
+/* ================= PROJECT PAGE ================= */
+
+.project-hero {
+    height: 100vh;
+    background: url("../Renders/The_Fiordland_Ascent/CAM1_The_Reflective_Approach.jpg") center/cover no-repeat;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.85));
+}
+
+.project-title {
+    position: relative;
+    text-align: center;
+}
+
+.project-film {
+    padding: 160px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.video-wrapper {
+    width: 100%;
+    max-width: 1200px;
+    aspect-ratio: 16 / 9;
+    position: relative;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* ================= CINEMATIC STILLS ================= */
+
+.project-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 180px;
+    padding: 160px 0;
+}
+
+.gallery-image {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery-image img {
+    max-height: 85vh;
+    width: auto;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1.2s cubic-bezier(0.22,1,0.36,1),
+                transform 1.2s cubic-bezier(0.22,1,0.36,1);
+}
+
+.gallery-image.in-view img {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* ================= FOOTER ================= */
 
 .footer {
@@ -253,7 +318,6 @@ html.loading, body.loading {
     margin: 0 auto 80px auto;
 }
 
-/* Social container */
 .footer-links {
     display: flex;
     justify-content: center;
@@ -261,9 +325,7 @@ html.loading, body.loading {
     gap: 56px;
 }
 
-/* Clickable area */
 .footer-links .social {
-    position: relative;
     width: 32px;
     height: 32px;
     display: flex;
@@ -271,7 +333,6 @@ html.loading, body.loading {
     justify-content: center;
 }
 
-/* Icon styling */
 .footer-links .icon {
     width: 22px;
     height: 22px;
@@ -281,9 +342,4 @@ html.loading, body.loading {
 
 .footer-links .social:hover .icon {
     filter: brightness(0) saturate(100%) invert(34%) sepia(90%) saturate(1800%) hue-rotate(345deg) brightness(95%) contrast(90%);
-}
-
-/* Accent fill animation */
-.footer-links .social:hover .icon {
-    fill: #e0462e;
 }
