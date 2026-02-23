@@ -1,3 +1,5 @@
+/* ================= RESET ================= */
+
 * {
     margin: 0;
     padding: 0;
@@ -9,33 +11,23 @@ html, body {
     color: #fff;
     font-family: serif;
     overflow-x: hidden;
-    cursor: none;
 }
 
-/* Disable custom cursor on touch devices */
-@media (pointer: coarse) {
-    html, body {
-        cursor: default;
-    }
-    .cursor-dot,
-    .cursor-ring {
-        display: none;
-    }
+/* ================= FORCE HIDE SYSTEM CURSOR ================= */
+
+html, body, a, button, span, div, img {
+    cursor: none !important;
 }
 
-/* ================= CURSOR ================= */
-
-body {
-    cursor: none;
-}
+/* ================= CUSTOM CURSOR ================= */
 
 .cursor-dot,
 .cursor-ring {
     position: fixed;
+    pointer-events: none;
+    z-index: 999999;
     top: 0;
     left: 0;
-    pointer-events: none;
-    z-index: 99999;
     transform: translate(-50%, -50%);
 }
 
