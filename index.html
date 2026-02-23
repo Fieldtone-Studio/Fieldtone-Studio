@@ -5,16 +5,13 @@
     <title>Fieldtone Studio | Archvizography</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Favicon -->
     <link rel="icon" type="image/jpeg" href="assets/img/FIELDTONE_Favicon_Colored_BG.jpg">
-
-    <!-- Styles -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-    <!-- ================= LOADER ================= -->
-    <div id="loader">
+<!-- ================= LOADER ================= -->
+<div id="loader">
     <div class="loader-inner">
         <img 
             src="assets/img/FIELDTONE_Textmark_White.png"
@@ -24,92 +21,79 @@
         <div class="loader-accent"></div>
     </div>
 </div>
-    <!-- ================= MAIN CONTENT ================= -->
-    <main id="main-content">
 
-        <!-- CAM 1 (Loads Immediately) -->
-        <section class="render-section">
-            <img 
-                src="Renders/The_Fiordland_Ascent/CAM1_The_Reflective_Approach.jpg"
-                alt="The Reflective Approach"
-                class="render-image"
-            >
-        </section>
+<!-- ================= NAVIGATION ================= -->
+<header class="navbar">
+    <a href="/" class="logo">
+        <img src="assets/img/FIELDTONE_Textmark_White.png" alt="Fieldtone Studio">
+    </a>
 
-        <!-- CAM 2 -->
-        <section class="render-section">
-            <img 
-                src="Renders/The_Fiordland_Ascent/CAM2_TheCliffSide_Ascent.jpg"
-                loading="lazy"
-                alt="The Cliff Side Ascent"
-                class="render-image"
-            >
-        </section>
+    <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+    </div>
+</header>
 
-        <!-- CAM 3 -->
-        <section class="render-section">
-            <img 
-                src="Renders/The_Fiordland_Ascent/CAM3_The_Skybridge_Arrival.jpg"
-                loading="lazy"
-                alt="The Skybridge Arrival"
-                class="render-image"
-            >
-        </section>
+<div class="menu-overlay" id="menu">
+    <nav class="menu-links">
+        <a href="#">Work</a>
+        <a href="#">Archvizography</a>
+        <a href="#">Ethos</a>
+        <a href="#">Clients</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</div>
 
-        <!-- CAM 4 -->
-        <section class="render-section">
-            <img 
-                src="Renders/The_Fiordland_Ascent/CAM4_The_Rain_Passage.jpg"
-                loading="lazy"
-                alt="The Rain Passage"
-                class="render-image"
-            >
-        </section>
+<!-- ================= MAIN CONTENT ================= -->
+<main id="main-content">
 
-        <!-- CAM 5 -->
-        <section class="render-section">
-            <img 
-                src="Renders/The_Fiordland_Ascent/CAM5_The_Summit_Veranda.jpg"
-                loading="lazy"
-                alt="The Summit Veranda"
-                class="render-image"
-            >
-        </section>
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>
+                We create visuals<br>
+                that move hearts<br>
+                and move properties
+            </h1>
+        </div>
+    </section>
 
-        <!-- CAM 6 -->
-        <section class="render-section">
-            <img 
-                src="Renders/The_Fiordland_Ascent/CAM6_The_Garden_Overlook.jpg"
-                loading="lazy"
-                alt="The Garden Overlook"
-                class="render-image"
-            >
-        </section>
+    <!-- FEATURED PROJECTS -->
+    <section class="featured">
+        <h2>Featured Projects</h2>
 
-        <!-- CAM 7 -->
-        <section class="render-section">
-            <img 
-                src="Renders/The_Fiordland_Ascent/CAM7_The_Suspended_Curve.jpg"
-                loading="lazy"
-                alt="The Suspended Curve"
-                class="render-image"
-            >
-        </section>
+        <div class="project-grid">
+            <div class="project-card">
+                <img src="Renders/The_Fiordland_Ascent/CAM1_The_Reflective_Approach.jpg" alt="">
+                <div class="project-title">The Fiordland Ascent</div>
+            </div>
 
-        <!-- CAM 8 -->
-        <section class="render-section">
-            <img 
-                src="Renders/The_Fiordland_Ascent/CAM8_The_Fjordside_Outlook.jpg"
-                loading="lazy"
-                alt="The Fjordside Outlook"
-                class="render-image"
-            >
-        </section>
+            <div class="project-card placeholder">
+                <div class="project-title">Coming Soon</div>
+            </div>
 
-    </main>
+            <div class="project-card placeholder">
+                <div class="project-title">Coming Soon</div>
+            </div>
+        </div>
+    </section>
 
-    <!-- Scripts -->
-    <script src="assets/js/main.js"></script>
+    <!-- FOOTER -->
+    <footer id="contact" class="footer">
+        <img src="assets/img/FIELDTONE_Textmark_White.png" alt="Fieldtone Studio">
 
+        <div class="footer-links">
+            <a href="#">Instagram</a>
+            <a href="#">Vimeo</a>
+            <a href="#">LinkedIn</a>
+            <a href="#">Facebook</a>
+            <a href="mailto:info@fieldtone-studio.com">Email</a>
+        </div>
+    </footer>
+
+</main>
+
+<script src="assets/js/main.js"></script>
 </body>
 </html>
