@@ -242,40 +242,44 @@ html.loading, body.loading {
 /* ================= FOOTER ================= */
 
 .footer {
-    padding: 100px 20px;
+    padding: 160px 20px 120px;
     text-align: center;
 }
 
-.footer img.logo-footer {
+.footer > img {
     width: 160px;
-    margin-bottom: 40px;
+    height: auto;
+    display: block;
+    margin: 0 auto 80px auto;
 }
 
+/* Social container */
 .footer-links {
     display: flex;
     justify-content: center;
-    gap: 40px;
-    margin-top: 20px;
+    align-items: center;
+    gap: 56px;
 }
 
+/* Clickable area */
 .footer-links .social {
-    display: inline-block;
     position: relative;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.footer-links .social img {
-    width: 24px;
-    height: 24px;
-    transition: filter 0.25s ease, transform 0.25s ease;
+/* Icon styling */
+.footer-links .icon {
+    width: 22px;
+    height: 22px;
+    fill: #ffffff;
+    transition: fill 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* Accent color fill effect */
-.footer-links .social:hover img {
-    filter: brightness(0) saturate(100%)
-            invert(37%) sepia(96%)
-            saturate(1080%)
-            hue-rotate(340deg)
-            brightness(95%)
-            contrast(95%);
-    transform: scale(1.15);
+/* Accent fill animation */
+.footer-links .social:hover .icon {
+    fill: #e0462e;
 }
