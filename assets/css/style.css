@@ -15,6 +15,10 @@ body {
 
 /* ================= LOADER ================= */
 
+body.loading {
+    overflow: hidden;
+}
+
 #loader {
     position: fixed;
     inset: 0;
@@ -26,17 +30,37 @@ body {
     transition: opacity 1.2s ease, visibility 1.2s ease;
 }
 
-.loader-logo {
-    width: 320px;
-    opacity: 0;
-    transform: translateY(12px) scale(0.98);
-    animation: logoReveal 1.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+.loader-inner {
+    text-align: center;
 }
 
-@keyframes logoReveal {
+.loader-text {
+    width: 320px;
+    opacity: 0;
+    animation: textFade 1.2s ease forwards;
+}
+
+.loader-accent {
+    height: 4px;
+    width: 0;
+    background: #e0462e;
+    margin: 18px auto 0;
+    transform-origin: center;
+    animation: lineGrow 1.4s cubic-bezier(0.22,1,0.36,1) forwards;
+}
+
+@keyframes textFade {
     to {
         opacity: 1;
-        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes lineGrow {
+    from {
+        width: 0;
+    }
+    to {
+        width: 220px;
     }
 }
 
@@ -44,7 +68,6 @@ body {
     opacity: 0;
     visibility: hidden;
 }
-
 /* ================= MAIN CONTENT ================= */
 
 #main-content {
