@@ -275,8 +275,12 @@ html.loading, body.loading {
 .footer-links .icon {
     width: 22px;
     height: 22px;
-    fill: #ffffff;
-    transition: fill 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    filter: brightness(0) invert(1);
+    transition: filter 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.footer-links .social:hover .icon {
+    filter: brightness(0) saturate(100%) invert(34%) sepia(90%) saturate(1800%) hue-rotate(345deg) brightness(95%) contrast(90%);
 }
 
 /* Accent fill animation */
