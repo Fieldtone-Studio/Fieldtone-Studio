@@ -2,32 +2,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const loader = document.getElementById("loader");
     const mainContent = document.getElementById("main-content");
+    const hamburger = document.getElementById("hamburger");
+    const menu = document.getElementById("menu");
 
-    // Lock scroll
     document.documentElement.classList.add("loading");
     document.body.classList.add("loading");
 
-    if (sessionStorage.getItem("fieldtoneLoaderShown")) {
-
+    setTimeout(() => {
         loader.classList.add("hidden");
         mainContent.classList.add("visible");
-
         document.documentElement.classList.remove("loading");
         document.body.classList.remove("loading");
+    }, 3600);
 
-    } else {
-
-        setTimeout(() => {
-
-            loader.classList.add("hidden");
-            mainContent.classList.add("visible");
-
-            document.documentElement.classList.remove("loading");
-            document.body.classList.remove("loading");
-
-            sessionStorage.setItem("fieldtoneLoaderShown", "true");
-
-        }, 3600); // perfectly synced with animation timing
-    }
+    hamburger.addEventListener("click", () => {
+        menu.classList.toggle("active");
+    });
 
 });
