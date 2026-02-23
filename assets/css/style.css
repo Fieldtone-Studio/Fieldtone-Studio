@@ -161,7 +161,7 @@ html.loading, body.loading {
 
 .hero {
     height: 100vh;
-    background: url("../Renders/The_Fiordland_Ascent/CAM1_The_Reflective_Approach.jpg") center/cover no-repeat;
+    background: url("../../Renders/The_Fiordland_Ascent/CAM1_The_Reflective_Approach.jpg") center/cover no-repeat;
     position: relative;
     display: flex;
     align-items: center;
@@ -232,27 +232,18 @@ html.loading, body.loading {
     left: 20px;
 }
 
-/* ================= PROJECT PAGE ================= */
+/* ================= PROJECT PAGE HERO ================= */
 
 .project-hero {
     height: 100vh;
-    background: url("../Renders/The_Fiordland_Ascent/CAM1_The_Reflective_Approach.jpg") center/cover no-repeat;
+    background: url("../../Renders/The_Fiordland_Ascent/CAM1_The_Reflective_Approach.jpg") center/cover no-repeat;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.project-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.85));
-}
-
-.project-title {
-    position: relative;
-    text-align: center;
-}
+/* ================= PROJECT VIDEO ================= */
 
 .project-film {
     padding: 160px 20px;
@@ -313,24 +304,13 @@ html.loading, body.loading {
 
 .footer > img {
     width: 160px;
-    height: auto;
-    display: block;
     margin: 0 auto 80px auto;
 }
 
 .footer-links {
     display: flex;
     justify-content: center;
-    align-items: center;
     gap: 56px;
-}
-
-.footer-links .social {
-    width: 32px;
-    height: 32px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .footer-links .icon {
