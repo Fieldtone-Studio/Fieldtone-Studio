@@ -4,6 +4,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const hamburger = document.getElementById("hamburger");
     const menu = document.getElementById("menu");
 
+    /* ================= LOADER ================= */
+
     document.documentElement.classList.add("loading");
     document.body.classList.add("loading");
 
@@ -12,6 +14,8 @@ document.addEventListener("DOMContentLoaded", function () {
         document.documentElement.classList.remove("loading");
         document.body.classList.remove("loading");
     }, 3600);
+
+    /* ================= HAMBURGER MENU ================= */
 
     hamburger.addEventListener("click", () => {
         menu.classList.toggle("active");
@@ -23,34 +27,39 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-   /* CUSTOM CURSOR */
+    /* ================= CUSTOM CURSOR (DESKTOP ONLY) ================= */
 
-const dot = document.querySelector(".cursor-dot");
-const ring = document.querySelector(".cursor-ring");
+    if (window.matchMedia("(pointer: fine)").matches) {
 
-let mouseX = 0;
-let mouseY = 0;
-let ringX = 0;
-let ringY = 0;
+        const dot = document.querySelector(".cursor-dot");
+        const ring = document.querySelector(".cursor-ring");
 
-document.addEventListener("mousemove", (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
+        if (!dot || !ring) return;
 
-    dot.style.left = mouseX + "px";
-    dot.style.top = mouseY + "px";
-});
+        let mouseX = 0;
+        let mouseY = 0;
+        let ringX = 0;
+        let ringY = 0;
 
-function animate() {
-    ringX += (mouseX - ringX) * 0.15;
-    ringY += (mouseY - ringY) * 0.15;
+        document.addEventListener("mousemove", (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
 
-    ring.style.left = ringX + "px";
-    ring.style.top = ringY + "px";
+            dot.style.left = mouseX + "px";
+            dot.style.top = mouseY + "px";
+        });
 
-    requestAnimationFrame(animate);
-}
+        function animate() {
+            ringX += (mouseX - ringX) * 0.15;
+            ringY += (mouseY - ringY) * 0.15;
 
-animate();
+            ring.style.left = ringX + "px";
+            ring.style.top = ringY + "px";
+
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+    }
 
 });
