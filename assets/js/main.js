@@ -4,37 +4,39 @@ document.addEventListener("DOMContentLoaded", function () {
     const hamburger = document.getElementById("hamburger");
     const menu = document.getElementById("menu");
 
-    /* ================= LOADER ================= */
+    /* ================= SAFE LOADER (ONLY IF EXISTS) ================= */
 
-    document.documentElement.classList.add("loading");
-    document.body.classList.add("loading");
+    if (loader) {
+        document.documentElement.classList.add("loading");
+        document.body.classList.add("loading");
 
-    setTimeout(() => {
-        loader.classList.add("hidden");
-        document.documentElement.classList.remove("loading");
-        document.body.classList.remove("loading");
-    }, 3600);
+        setTimeout(() => {
+            loader.classList.add("hidden");
+            document.documentElement.classList.remove("loading");
+            document.body.classList.remove("loading");
+        }, 3600);
+    }
 
-    /* ================= HAMBURGER MENU ================= */
+    /* ================= MENU ================= */
 
-    hamburger.addEventListener("click", () => {
-        menu.classList.toggle("active");
+    if (hamburger && menu) {
+        hamburger.addEventListener("click", () => {
+            menu.classList.toggle("active");
 
-        if (menu.classList.contains("active")) {
-            document.body.style.overflow = "hidden";
-        } else {
-            document.body.style.overflow = "";
-        }
-    });
+            if (menu.classList.contains("active")) {
+                document.body.style.overflow = "hidden";
+            } else {
+                document.body.style.overflow = "";
+            }
+        });
+    }
 
-    /* ================= CUSTOM CURSOR (DESKTOP ONLY) ================= */
+    /* ================= CUSTOM CURSOR ================= */
 
-    if (window.matchMedia("(pointer: fine)").matches) {
+    const dot = document.querySelector(".cursor-dot");
+    const ring = document.querySelector(".cursor-ring");
 
-        const dot = document.querySelector(".cursor-dot");
-        const ring = document.querySelector(".cursor-ring");
-
-        if (!dot || !ring) return;
+    if (dot && ring) {
 
         let mouseX = 0;
         let mouseY = 0;
