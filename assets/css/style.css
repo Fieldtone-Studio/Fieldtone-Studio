@@ -187,57 +187,7 @@ body.loading {
     line-height: 1.4;
 }
 
-/* ================= FEATURED ================= */
-
-.featured {
-    padding: 120px 40px;
-    text-align: center;
-}
-
-.project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 40px;
-}
-
-.project-card {
-    position: relative;
-    overflow: hidden;
-    display: block;
-    text-decoration: none;
-    color: inherit;
-}
-
-.project-card img {
-    width: 100%;
-    display: block;
-    transition: transform 0.6s ease;
-}
-
-.project-card:hover img {
-    transform: scale(1.05);
-}
-
-.project-card::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border: 2px solid #e0462e;
-    opacity: 0;
-    transition: opacity 0.4s ease;
-}
-
-.project-card:hover::after {
-    opacity: 1;
-}
-
-.project-title {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-}
-
-/* ================= PROJECT PAGE HERO ================= */
+/* ================= PROJECT HERO ================= */
 
 .project-hero {
     height: 100vh;
@@ -257,6 +207,43 @@ body.loading {
 .project-title {
     position: relative;
     text-align: center;
+}
+
+.project-title h1 {
+    font-size: 2.6rem;
+    margin-bottom: 10px;
+}
+
+.project-title p {
+    opacity: 0.8;
+}
+
+/* ================= PROJECT INTRO ================= */
+
+.project-intro {
+    padding: 140px 20px;
+    display: flex;
+    justify-content: center;
+    background: #000;
+}
+
+.intro-inner {
+    max-width: 800px;
+    text-align: center;
+}
+
+.intro-inner h2 {
+    font-size: 1rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    opacity: 0.6;
+}
+
+.intro-inner p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    opacity: 0.85;
 }
 
 /* ================= PROJECT VIDEO ================= */
@@ -286,20 +273,50 @@ body.loading {
 .project-gallery {
     display: flex;
     flex-direction: column;
-    gap: 180px;
+    gap: 140px;
     padding: 160px 0;
 }
 
 .gallery-image {
-    height: 100vh;
+    min-height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .gallery-image img {
+    max-width: 90%;
     max-height: 85vh;
-    width: auto;
+    cursor: none;
+}
+
+/* ================= LIGHTBOX ================= */
+
+.lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.95);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox-img {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 40px;
+    right: 60px;
+    font-size: 2rem;
+    color: #fff;
 }
 
 /* ================= FOOTER ================= */
