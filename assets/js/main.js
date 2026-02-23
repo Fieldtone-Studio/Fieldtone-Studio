@@ -16,7 +16,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 3600);
 
     hamburger.addEventListener("click", () => {
-        menu.classList.toggle("active");
-    });
+    menu.classList.toggle("active");
 
+    if (menu.classList.contains("active")) {
+        document.body.style.overflow = "hidden";
+    } else {
+        document.body.style.overflow = "";
+    }
 });
