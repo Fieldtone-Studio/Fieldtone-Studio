@@ -23,29 +23,34 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    /* CUSTOM CURSOR */
-    const dot = document.querySelector(".cursor-dot");
-    const ring = document.querySelector(".cursor-ring");
+   /* CUSTOM CURSOR */
 
-    let mouseX = 0, mouseY = 0;
-    let ringX = 0, ringY = 0;
+const dot = document.querySelector(".cursor-dot");
+const ring = document.querySelector(".cursor-ring");
 
-    document.addEventListener("mousemove", (e) => {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
+let mouseX = 0;
+let mouseY = 0;
+let ringX = 0;
+let ringY = 0;
 
-        dot.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
-    });
+document.addEventListener("mousemove", (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
 
-    function animateRing() {
-        ringX += (mouseX - ringX) * 0.15;
-        ringY += (mouseY - ringY) * 0.15;
+    dot.style.left = mouseX + "px";
+    dot.style.top = mouseY + "px";
+});
 
-        ring.style.transform = `translate(${ringX - 18}px, ${ringY - 18}px)`;
+function animate() {
+    ringX += (mouseX - ringX) * 0.15;
+    ringY += (mouseY - ringY) * 0.15;
 
-        requestAnimationFrame(animateRing);
-    }
+    ring.style.left = ringX + "px";
+    ring.style.top = ringY + "px";
 
-    animateRing();
+    requestAnimationFrame(animate);
+}
+
+animate();
 
 });
