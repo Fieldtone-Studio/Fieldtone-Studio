@@ -56,6 +56,36 @@ body {
     opacity: 1;
 }
 
+/* ================= CINEMATIC RENDERS ================= */
+
+.render-section {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+    overflow: hidden;
+}
+
+/* Portrait 6K handling */
+.render-image {
+    max-height: 92vh;
+    width: auto;
+    object-fit: contain;
+
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1.6s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 1.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* When image becomes visible */
+.render-section.in-view .render-image {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* ================= HERO ================= */
 
 .hero {
