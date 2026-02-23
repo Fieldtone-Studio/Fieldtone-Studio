@@ -89,31 +89,38 @@ body.loading {
     margin: 6px 0;
 }
 
-/* ================= MENU ================= */
+/* ================= MENU OVERLAY ================= */
 
 .menu-overlay {
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.95);
+    background: rgba(0, 0, 0, 0.97);
     display: flex;
     justify-content: center;
     align-items: center;
+
     opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.6s ease;
+    visibility: hidden;
+    transition: opacity 0.5s ease;
+    z-index: 2000;
 }
 
 .menu-overlay.active {
     opacity: 1;
-    pointer-events: all;
+    visibility: visible;
+}
+
+.menu-links {
+    text-align: center;
 }
 
 .menu-links a {
     display: block;
-    color: #fff;
+    font-size: 2.4rem;
+    margin: 25px 0;
+    color: #ffffff;
     text-decoration: none;
-    font-size: 2rem;
-    margin: 20px 0;
+    position: relative;
 }
 
 /* ================= HERO ================= */
