@@ -10,11 +10,11 @@
 </head>
 <body>
 
-<!-- CUSTOM CURSOR -->
+<!-- ================= CUSTOM CURSOR ================= -->
 <div class="cursor-dot"></div>
 <div class="cursor-ring"></div>
 
-<!-- NAVBAR -->
+<!-- ================= NAVBAR ================= -->
 <header class="navbar">
     <a href="../../index.html" class="logo">
         <img src="../../assets/img/FIELDTONE_Primary_Colored_Logo_Black_BG.png" alt="Fieldtone Studio">
@@ -26,7 +26,7 @@
     </div>
 </header>
 
-<!-- MENU -->
+<!-- ================= MENU ================= -->
 <div class="menu-overlay" id="menu">
     <nav class="menu-links">
         <a href="../../index.html">Work</a>
@@ -39,7 +39,7 @@
 
 <main>
 
-    <!-- HERO -->
+    <!-- ================= HERO ================= -->
     <section class="project-hero">
         <div class="project-overlay"></div>
         <div class="project-title">
@@ -48,24 +48,20 @@
         </div>
     </section>
 
+    <!-- ================= PROJECT INTRO ================= -->
     <section class="project-intro">
-    <div class="intro-inner">
-        <h2>Concept</h2>
-        <p>
-            The Fiordland Ascent explores the dialogue between architecture and landscape
-            a structure carved into terrain, suspended between earth, sky, and possibility.
-            The project examines movement, arrival, compression, and release
-            through a cinematic architectural language.
-        </p>
-    </div>
-</section>
-
-    <!-- OPENING STILL -->
-    <section class="gallery-image">
-        <img src="../../Renders/The_Fiordland_Ascent/CAM2_TheCliffSide_Ascent.jpg" alt="">
+        <div class="intro-inner">
+            <h2>Concept</h2>
+            <p>
+                The Fiordland Ascent explores the dialogue between architecture and landscape —
+                a structure carved into terrain, suspended between earth, sky, and possibility.
+                The project examines movement, arrival, compression, and release
+                through a cinematic architectural language.
+            </p>
+        </div>
     </section>
 
-    <!-- DOCUMENTARY -->
+    <!-- ================= DOCUMENTARY ================= -->
     <section class="project-film">
         <div class="video-wrapper">
             <iframe 
@@ -77,42 +73,67 @@
         </div>
     </section>
 
-    <!-- STILL SEQUENCE -->
+    <!-- ================= CINEMATIC GALLERY ================= -->
     <section class="project-gallery">
 
         <div class="gallery-image">
-            <img src="../../Renders/The_Fiordland_Ascent/CAM1_The_Reflective_Approach.jpg" alt="">
+            <img class="lightbox-trigger"
+                 src="../../Renders/The_Fiordland_Ascent/CAM2_TheCliffSide_Ascent.jpg"
+                 alt="Cliffside Ascent">
         </div>
 
         <div class="gallery-image">
-            <img src="../../Renders/The_Fiordland_Ascent/CAM3_The_Skybridge_Arrival.jpg" alt="">
+            <img class="lightbox-trigger"
+                 src="../../Renders/The_Fiordland_Ascent/CAM1_The_Reflective_Approach.jpg"
+                 alt="Reflective Approach">
         </div>
 
         <div class="gallery-image">
-            <img src="../../Renders/The_Fiordland_Ascent/CAM4_The_Rain_Passage.jpg" alt="">
+            <img class="lightbox-trigger"
+                 src="../../Renders/The_Fiordland_Ascent/CAM3_The_Skybridge_Arrival.jpg"
+                 alt="Skybridge Arrival">
         </div>
 
         <div class="gallery-image">
-            <img src="../../Renders/The_Fiordland_Ascent/CAM5_The_Summit_Veranda.jpg" alt="">
+            <img class="lightbox-trigger"
+                 src="../../Renders/The_Fiordland_Ascent/CAM4_The_Rain_Passage.jpg"
+                 alt="Rain Passage">
         </div>
 
         <div class="gallery-image">
-            <img src="../../Renders/The_Fiordland_Ascent/CAM6_The_Garden_Overlook.jpg" alt="">
+            <img class="lightbox-trigger"
+                 src="../../Renders/The_Fiordland_Ascent/CAM5_The_Summit_Veranda.jpg"
+                 alt="Summit Veranda">
         </div>
 
         <div class="gallery-image">
-            <img src="../../Renders/The_Fiordland_Ascent/CAM7_The_Suspended_Curve.jpg" alt="">
+            <img class="lightbox-trigger"
+                 src="../../Renders/The_Fiordland_Ascent/CAM6_The_Garden_Overlook.jpg"
+                 alt="Garden Overlook">
         </div>
 
         <div class="gallery-image">
-            <img src="../../Renders/The_Fiordland_Ascent/CAM8_The_Fjordside_Outlook.jpg" alt="">
+            <img class="lightbox-trigger"
+                 src="../../Renders/The_Fiordland_Ascent/CAM7_The_Suspended_Curve.jpg"
+                 alt="Suspended Curve">
+        </div>
+
+        <div class="gallery-image">
+            <img class="lightbox-trigger"
+                 src="../../Renders/The_Fiordland_Ascent/CAM8_The_Fjordside_Outlook.jpg"
+                 alt="Fjordside Outlook">
         </div>
 
     </section>
 
 </main>
 
+<!-- ================= LIGHTBOX ================= -->
+<div class="lightbox" id="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <img class="lightbox-img" src="">
+</div>
+
 <script src="../../assets/js/main.js"></script>
 </body>
 </html>
-
