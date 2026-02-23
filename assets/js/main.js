@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
             mainContent.classList.add("visible");
             document.body.classList.remove("loading");
             sessionStorage.setItem("fieldtoneLoaderShown", "true");
-        }, 2200);
+        }, 4000);
     }
 
 });
