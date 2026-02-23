@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const hamburger = document.getElementById("hamburger");
     const menu = document.getElementById("menu");
 
-    /* ================= SAFE LOADER (ONLY IF EXISTS) ================= */
+    /* ================= SAFE LOADER ================= */
 
     if (loader) {
         document.documentElement.classList.add("loading");
@@ -62,6 +62,43 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         animate();
+    }
+
+    /* ================= LIGHTBOX ================= */
+
+    const triggers = document.querySelectorAll(".lightbox-trigger");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.querySelector(".lightbox-img");
+    const lightboxClose = document.querySelector(".lightbox-close");
+
+    if (triggers.length && lightbox && lightboxImg && lightboxClose) {
+
+        triggers.forEach(img => {
+            img.addEventListener("click", () => {
+                lightbox.classList.add("active");
+                lightboxImg.src = img.src;
+                document.body.style.overflow = "hidden";
+            });
+        });
+
+        function closeLightbox() {
+            lightbox.classList.remove("active");
+            document.body.style.overflow = "";
+        }
+
+        lightboxClose.addEventListener("click", closeLightbox);
+
+        lightbox.addEventListener("click", (e) => {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") {
+                closeLightbox();
+            }
+        });
     }
 
 });
