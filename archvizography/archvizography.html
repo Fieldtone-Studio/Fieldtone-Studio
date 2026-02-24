@@ -10,13 +10,16 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
+<!-- Global styles first -->
 <link rel="stylesheet" href="/assets/css/style.css">
+
+<!-- Page-specific styles second -->
 <link rel="stylesheet" href="archvizography.css">
-    <link rel="stylesheet" href="archvizography.css">
 </head>
 
 <body class="archvizography-page loading">
 
+<!-- ================= CUSTOM CURSOR ================= -->
 <div class="cursor-dot"></div>
 <div class="cursor-ring"></div>
 
@@ -69,27 +72,36 @@
 <section class="hero">
 
     <picture>
+        <!-- Mobile image -->
         <source 
-            srcset="loader/hero-archvizography-mobile.png"
-            media="(max-width: 768px)">
+            srcset="loader/hero-archvizography-mobile.webp"
+            media="(max-width: 768px)"
+            type="image/webp">
 
+        <!-- Desktop fallback -->
         <img 
             src="loader/hero-archvizography.webp" 
-            alt="Archvizography"
+            alt="Archvizography hero"
             class="hero-bg">
     </picture>
 
     <div class="hero-overlay">
         <p class="eyebrow">Archvizography</p>
         <h1>We don’t render buildings.<br>We direct stories.</h1>
-        <p class="sub">Architecture as cinema. Light as narrative. Space as emotion.</p>
+        <p class="sub">
+            Architecture as cinema. Light as narrative. Space as emotion.
+        </p>
     </div>
 
 </section>
 
+<!-- ================= FOOTER ================= -->
+
 <footer class="footer">
     © <span id="year"></span> Fieldtone Studio
 </footer>
+
+<!-- ================= PAGE SCRIPT ================= -->
 
 <script>
 document.getElementById("year").textContent = new Date().getFullYear();
@@ -108,5 +120,3 @@ window.addEventListener("load", () => {
 
 </body>
 </html>
-
-
