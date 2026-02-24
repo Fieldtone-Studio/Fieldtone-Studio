@@ -329,100 +329,66 @@ body.loading {
 
 .project-gallery {
     position: relative;
-    padding: 240px 0;
+    padding: 260px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 220px;
+    gap: 240px;
     z-index: 1;
 }
 
-/* LEFT STRIP BASE */
+/* FILM STRIP SIDES */
 .project-gallery::before,
 .project-gallery::after {
     content: "";
     position: fixed;
     top: 0;
     bottom: 0;
-    width: 90px;
-    background: #0c0c0c;
+    width: 100px;
+    background: #0b0b0b;
+    z-index: 5;
     box-shadow:
-        inset -6px 0 12px rgba(0,0,0,0.8),
-        inset 6px 0 12px rgba(0,0,0,0.8);
-    z-index: 10;
+        inset -10px 0 20px rgba(0,0,0,0.9),
+        inset 10px 0 20px rgba(0,0,0,0.9);
 }
 
-/* LEFT */
+/* LEFT STRIP */
 .project-gallery::before {
     left: 0;
 }
 
-/* RIGHT */
+/* RIGHT STRIP */
 .project-gallery::after {
     right: 0;
 }
 
-/* PERFORATIONS */
-body::before,
-body::after {
-    content: "";
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    width: 90px;
-    pointer-events: none;
-    z-index: 11;
+/* PERFORATION HOLES */
+.project-gallery::before,
+.project-gallery::after {
     background-image:
-        linear-gradient(#000 0 0);
-    background-size: 24px 14px;
-    background-repeat: repeat-y;
-    background-position: center;
-    animation: filmMove 8s linear infinite;
+        repeating-linear-gradient(
+            to bottom,
+            transparent 0px,
+            transparent 28px,
+            #000 28px,
+            #000 60px
+        );
+    background-size: 100% 60px;
+    animation: filmMove 10s linear infinite;
 }
 
-/* Position perforations */
-body::before {
-    left: 0;
-}
-
-body::after {
-    right: 0;
-}
-
-/* Cut rectangular holes effect */
-body::before {
-    mask-image: repeating-linear-gradient(
-        to bottom,
-        transparent 0px,
-        transparent 18px,
-        black 18px,
-        black 40px
-    );
-}
-
-body::after {
-    mask-image: repeating-linear-gradient(
-        to bottom,
-        transparent 0px,
-        transparent 18px,
-        black 18px,
-        black 40px
-    );
-}
-
-/* Subtle vertical film motion */
 @keyframes filmMove {
     from { background-position-y: 0; }
-    to   { background-position-y: 40px; }
+    to   { background-position-y: 60px; }
 }
 
-/* IMAGE FRAMES */
+/* FILM FRAMES */
 
 .film-frame {
     width: 70%;
-    max-width: 1100px;
+    max-width: 1150px;
     position: relative;
-    z-index: 1;
+    z-index: 2;
     transform: translateY(60px);
     opacity: 0;
     transition: all 1.2s cubic-bezier(0.22,1,0.36,1);
@@ -436,8 +402,44 @@ body::after {
 .film-frame img {
     width: 100%;
     display: block;
-    box-shadow:
-        0 30px 60px rgba(0,0,0,0.6);
+    box-shadow: 0 40px 80px rgba(0,0,0,0.7);
+}
+
+/* ================= FILM COUNTER ================= */
+
+.film-counter {
+    position: fixed;
+    left: 45px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 6;
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
+    font-family: monospace;
+    font-size: 0.85rem;
+    letter-spacing: 4px;
+    opacity: 0.18;
+    pointer-events: none;
+}
+
+/* ================= FILM DUST ================= */
+
+.film-dust {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 20;
+    background-image:
+        radial-gradient(circle at 20% 30%, rgba(255,255,255,0.04) 1px, transparent 2px),
+        radial-gradient(circle at 70% 80%, rgba(255,255,255,0.03) 1px, transparent 2px),
+        radial-gradient(circle at 40% 60%, rgba(255,255,255,0.02) 1px, transparent 2px);
+    animation: dustFloat 18s linear infinite;
+}
+
+@keyframes dustFloat {
+    from { transform: translateY(0); }
+    to   { transform: translateY(-300px); }
 }
 
 /* ================= LIGHTBOX ================= */
