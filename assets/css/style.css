@@ -325,7 +325,7 @@ body.loading {
     height: 100%;
 }
 
-/* ================= AUTHENTIC 35MM FILM STRIP ================= */
+/* ================= DESKTOP 35MM FILM STRIP ================= */
 
 .project-gallery {
     position: relative;
@@ -337,7 +337,7 @@ body.loading {
     z-index: 1;
 }
 
-/* FILM STRIP SIDES */
+/* Side rails (desktop only) */
 .project-gallery::before,
 .project-gallery::after {
     content: "";
@@ -350,21 +350,6 @@ body.loading {
     box-shadow:
         inset -10px 0 20px rgba(0,0,0,0.9),
         inset 10px 0 20px rgba(0,0,0,0.9);
-}
-
-/* LEFT STRIP */
-.project-gallery::before {
-    left: 0;
-}
-
-/* RIGHT STRIP */
-.project-gallery::after {
-    right: 0;
-}
-
-/* PERFORATION HOLES */
-.project-gallery::before,
-.project-gallery::after {
     background-image:
         repeating-linear-gradient(
             to bottom,
@@ -377,12 +362,15 @@ body.loading {
     animation: filmMove 10s linear infinite;
 }
 
+.project-gallery::before { left: 0; }
+.project-gallery::after { right: 0; }
+
 @keyframes filmMove {
     from { background-position-y: 0; }
     to   { background-position-y: 60px; }
 }
 
-/* FILM FRAMES */
+/* Film frames */
 
 .film-frame {
     width: 70%;
@@ -423,6 +411,11 @@ body.loading {
     pointer-events: none;
 }
 
+.film-counter span.active {
+    color: #e0462e;
+    opacity: 1;
+}
+
 /* ================= FILM DUST ================= */
 
 .film-dust {
@@ -441,6 +434,43 @@ body.loading {
     from { transform: translateY(0); }
     to   { transform: translateY(-300px); }
 }
+
+/* ================= MOBILE CINEMATIC MODE ================= */
+
+@media (max-width: 768px) {
+
+    /* Remove film rails */
+    .project-gallery::before,
+    .project-gallery::after {
+        display: none;
+    }
+
+    /* Expand frames */
+    .film-frame {
+        width: 92%;
+        max-width: none;
+    }
+
+    .project-gallery {
+        padding: 160px 0;
+        gap: 140px;
+    }
+
+    /* Adjust hero typography */
+    .project-title h1 {
+        font-size: 1.8rem;
+    }
+
+    .project-title p {
+        font-size: 0.9rem;
+    }
+
+    /* Reposition counter */
+    .film-counter {
+        left: 15px;
+        font-size: 0.7rem;
+        opacity: 0.3;
+    }
 
 /* ================= LIGHTBOX ================= */
 
