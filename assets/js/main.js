@@ -22,81 +22,87 @@ document.addEventListener("DOMContentLoaded", function () {
     if (hamburger && menu) {
         hamburger.addEventListener("click", () => {
             menu.classList.toggle("active");
-
-            if (menu.classList.contains("active")) {
-                document.body.style.overflow = "hidden";
-            } else {
-                document.body.style.overflow = "";
-            }
+            document.body.style.overflow = menu.classList.contains("active") ? "hidden" : "";
         });
     }
 
-    /* ================= CUSTOM CURSOR ================= */
+    /* ================= CUSTOM CURSOR (DISABLED ON MOBILE) ================= */
 
-    const dot = document.querySelector(".cursor-dot");
-    const ring = document.querySelector(".cursor-ring");
+    if (window.innerWidth > 1024) {
+        const dot = document.querySelector(".cursor-dot");
+        const ring = document.querySelector(".cursor-ring");
 
-    if (dot && ring) {
+        if (dot && ring) {
 
-        let mouseX = 0;
-        let mouseY = 0;
-        let ringX = 0;
-        let ringY = 0;
+            let mouseX = 0;
+            let mouseY = 0;
+            let ringX = 0;
+            let ringY = 0;
 
-        document.addEventListener("mousemove", (e) => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
+            document.addEventListener("mousemove", (e) => {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
 
-            dot.style.left = mouseX + "px";
-            dot.style.top = mouseY + "px";
-        });
+                dot.style.left = mouseX + "px";
+                dot.style.top = mouseY + "px";
+            });
 
-        function animate() {
-            ringX += (mouseX - ringX) * 0.15;
-            ringY += (mouseY - ringY) * 0.15;
+            function animate() {
+                ringX += (mouseX - ringX) * 0.15;
+                ringY += (mouseY - ringY) * 0.15;
 
-            ring.style.left = ringX + "px";
-            ring.style.top = ringY + "px";
+                ring.style.left = ringX + "px";
+                ring.style.top = ringY + "px";
 
-            requestAnimationFrame(animate);
+                requestAnimationFrame(animate);
+            }
+
+            animate();
         }
+    }
 
-        animate();
+    /* ================= FILM FRAME REVEAL ================= */
+
+    const frames = document.querySelectorAll(".film-frame");
+
+    if (frames.length > 0) {
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("in-view");
+                }
+            });
+        }, { threshold: 0.25 });
+
+        frames.forEach(frame => observer.observe(frame));
     }
 
     /* ================= LIGHTBOX ================= */
 
-    const triggers = document.querySelectorAll(".lightbox-trigger");
     const lightbox = document.getElementById("lightbox");
     const lightboxImg = document.querySelector(".lightbox-img");
-    const lightboxClose = document.querySelector(".lightbox-close");
+    const closeBtn = document.querySelector(".lightbox-close");
+    const triggers = document.querySelectorAll(".lightbox-trigger");
 
-    if (triggers.length && lightbox && lightboxImg && lightboxClose) {
+    if (lightbox && lightboxImg && closeBtn) {
 
         triggers.forEach(img => {
             img.addEventListener("click", () => {
-                lightbox.classList.add("active");
                 lightboxImg.src = img.src;
+                lightbox.classList.add("active");
                 document.body.style.overflow = "hidden";
             });
         });
 
-        function closeLightbox() {
+        closeBtn.addEventListener("click", () => {
             lightbox.classList.remove("active");
             document.body.style.overflow = "";
-        }
-
-        lightboxClose.addEventListener("click", closeLightbox);
+        });
 
         lightbox.addEventListener("click", (e) => {
             if (e.target === lightbox) {
-                closeLightbox();
-            }
-        });
-
-        document.addEventListener("keydown", (e) => {
-            if (e.key === "Escape") {
-                closeLightbox();
+                lightbox.classList.remove("active");
+                document.body.style.overflow = "";
             }
         });
     }
