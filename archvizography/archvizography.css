@@ -227,7 +227,7 @@
 @media (max-width:768px){
 
     .avz-hero-image{
-        height:55vh;
+        height:100vh;
         object-position:center top;
     }
 
@@ -239,3 +239,4 @@
         font-size:1.8rem;
     }
 }
+
