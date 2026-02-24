@@ -54,7 +54,7 @@
 .clap-hinge {
     position:absolute;
     width:28%;
-    left:-2.5%;
+    left:-1.7%;
     top:-18.8%;
     z-index:3;
 }
@@ -245,6 +245,7 @@
     padding:60px 20px;
     border-top:1px solid #1a1a1a;
 }
+
 
 
 
