@@ -13,45 +13,45 @@
 <!-- Global styles first -->
 <link rel="stylesheet" href="/assets/css/style.css">
 
-<!-- Page-specific styles second -->
+<!-- Page-specific styles -->
 <link rel="stylesheet" href="archvizography.css">
 </head>
 
 <body class="archvizography-page loading">
 
-<!-- ================= CUSTOM CURSOR ================= -->
+<!-- Custom Cursor -->
 <div class="cursor-dot"></div>
 <div class="cursor-ring"></div>
 
 <!-- ================= LOADER ================= -->
 
-<div id="avzLoader" class="loader">
+<div id="avzLoader" class="avz-loader">
 
-    <div class="curtain curtain-top"></div>
-    <div class="curtain curtain-bottom"></div>
+    <div class="avz-curtain avz-curtain-top"></div>
+    <div class="avz-curtain avz-curtain-bottom"></div>
 
-    <div class="clapper-stage">
+    <div class="avz-stage">
 
-        <img class="clap-body"
+        <img class="avz-body"
              src="loader/clapper-body.svg"
              alt="Clapper Body">
 
-        <img class="clap-hinge"
+        <img class="avz-hinge"
              src="loader/clapper-hinge.svg"
              alt="Clapper Hinge">
 
-        <div class="clap-top-wrapper">
-            <img class="clap-top"
+        <div class="avz-top-wrapper">
+            <img class="avz-top"
                  src="loader/clapper-top.svg"
                  alt="Clapper Top">
         </div>
 
-        <img class="wordmark"
+        <img class="avz-wordmark"
              src="loader/archvizography-textmark.png"
              alt="Archvizography">
 
-        <div class="impact-flash"></div>
-        <div class="dust-burst"></div>
+        <div class="avz-flash"></div>
+        <div class="avz-dust"></div>
 
     </div>
 
@@ -69,46 +69,52 @@
 
 <!-- ================= HERO ================= -->
 
-<section class="hero">
+<section class="avz-hero">
 
     <picture>
-        <!-- Mobile image -->
-        <source 
-            srcset="loader/hero-archvizography-mobile.webp"
-            media="(max-width: 768px)"
-            type="image/webp">
-
-        <!-- Desktop fallback -->
-        <img 
-            src="loader/hero-archvizography.webp" 
-            alt="Archvizography hero"
-            class="hero-bg">
+        <source srcset="loader/hero-archvizography-mobile.png"
+                media="(max-width: 768px)">
+        <img src="loader/hero-archvizography.webp"
+             alt="Archvizography Hero"
+             class="avz-hero-image">
     </picture>
 
-    <div class="hero-overlay">
-        <p class="eyebrow">Archvizography</p>
+    <div class="avz-hero-text">
+        <p class="avz-eyebrow">Archvizography</p>
         <h1>We don’t render buildings.<br>We direct stories.</h1>
-        <p class="sub">
-            Architecture as cinema. Light as narrative. Space as emotion.
-        </p>
+        <p class="avz-sub">Architecture as cinema. Light as narrative. Space as emotion.</p>
     </div>
 
 </section>
 
-<!-- ================= FOOTER ================= -->
+<section class="avz-section">
+    <h2>What is Archvizography?</h2>
+    <p>Archvizography merges architectural visualization with cinematic storytelling. Architecture is staged, lit, and directed as narrative.</p>
+</section>
 
-<footer class="footer">
+<section class="avz-section">
+    <h2>Our Philosophy</h2>
+    <ul>
+        <li>Walls are actors.</li>
+        <li>Light is our cinematographer, shaping mood.</li>
+        <li>Details are emotion that carry memory.</li>
+        <li>Every frame carries intention.</li>
+    </ul>
+</section>
+
+<footer class="avz-footer">
     © <span id="year"></span> Fieldtone Studio
 </footer>
 
-<!-- ================= PAGE SCRIPT ================= -->
+<!-- Global JS (for cursor + menu) -->
+<script src="/assets/js/main.js"></script>
 
+<!-- Page Loader Logic -->
 <script>
 document.getElementById("year").textContent = new Date().getFullYear();
 
 window.addEventListener("load", () => {
     const loader = document.getElementById("avzLoader");
-
     loader.classList.add("play");
 
     setTimeout(() => {
