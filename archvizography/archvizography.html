@@ -10,10 +10,15 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
+<link rel="stylesheet" href="/assets/css/style.css">
 <link rel="stylesheet" href="archvizography.css">
+    <link rel="stylesheet" href="archvizography.css">
 </head>
 
 <body class="archvizography-page loading">
+
+<div class="cursor-dot"></div>
+<div class="cursor-ring"></div>
 
 <!-- ================= LOADER ================= -->
 
@@ -62,27 +67,24 @@
 <!-- ================= HERO ================= -->
 
 <section class="hero">
-    <img src="loader/hero-archvizography.webp" alt="" class="hero-bg">
+
+    <picture>
+        <source 
+            srcset="loader/hero-archvizography-mobile.png"
+            media="(max-width: 768px)">
+
+        <img 
+            src="loader/hero-archvizography.webp" 
+            alt="Archvizography"
+            class="hero-bg">
+    </picture>
+
     <div class="hero-overlay">
         <p class="eyebrow">Archvizography</p>
         <h1>We don’t render buildings.<br>We direct stories.</h1>
         <p class="sub">Architecture as cinema. Light as narrative. Space as emotion.</p>
     </div>
-</section>
 
-<section class="section">
-    <h2>What is Archvizography?</h2>
-    <p>Archvizography merges architectural visualization with cinematic storytelling. Architecture is staged, lit, and directed as narrative.</p>
-</section>
-
-<section class="section">
-    <h2>Our Philosophy</h2>
-    <ul>
-        <li>Walls are actors.</li>
-        <li>Light is our cinematographer, shaping mood.</li>
-        <li>Details are emotion that carry memory.</li>
-        <li>Every frame carries intention.</li>
-    </ul>
 </section>
 
 <footer class="footer">
@@ -106,4 +108,5 @@ window.addEventListener("load", () => {
 
 </body>
 </html>
+
 
