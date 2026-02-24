@@ -78,10 +78,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     const index = Array.from(frames).indexOf(entry.target);
 
-                    counterItems.forEach(item => item.style.opacity = "0.15");
+                    counterItems.forEach(item => item.classList.remove("active"));
 
                     if (counterItems[index]) {
-                        counterItems[index].style.opacity = "0.8";
+                        counterItems[index].classList.add("active");
                     }
                 }
             });
