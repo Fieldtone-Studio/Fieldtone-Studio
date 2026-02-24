@@ -515,8 +515,12 @@ body.loading {
     text-align: center;
 }
 
-.footer > img {
+/* Logo — make this bulletproof */
+.footer img {
     width: 160px;
+    max-width: 160px;
+    height: auto;
+    display: block;
     margin: 0 auto 80px auto;
 }
 
@@ -529,6 +533,7 @@ body.loading {
 .footer-links .icon {
     width: 22px;
     height: 22px;
+    display: block;
     filter: brightness(0) invert(1);
     transition: filter 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
