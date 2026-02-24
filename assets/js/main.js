@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const hamburger = document.getElementById("hamburger");
     const menu = document.getElementById("menu");
 
-    /* ================= SAFE LOADER ================= */
+    /* ================= LOADER ================= */
 
     if (loader) {
         document.documentElement.classList.add("loading");
@@ -26,9 +26,10 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    /* ================= CUSTOM CURSOR (DISABLED ON MOBILE) ================= */
+    /* ================= CUSTOM CURSOR (DESKTOP ONLY) ================= */
 
-    if (window.innerWidth > 1024) {
+    if (window.matchMedia("(hover: hover)").matches) {
+
         const dot = document.querySelector(".cursor-dot");
         const ring = document.querySelector(".cursor-ring");
 
@@ -61,18 +62,30 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    /* ================= FILM FRAME REVEAL ================= */
+    /* ================= FILM FRAME REVEAL + COUNTER ================= */
 
     const frames = document.querySelectorAll(".film-frame");
+    const counterItems = document.querySelectorAll(".film-counter span");
 
     if (frames.length > 0) {
+
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
+
                 if (entry.isIntersecting) {
+
                     entry.target.classList.add("in-view");
+
+                    const index = Array.from(frames).indexOf(entry.target);
+
+                    counterItems.forEach(item => item.style.opacity = "0.15");
+
+                    if (counterItems[index]) {
+                        counterItems[index].style.opacity = "0.8";
+                    }
                 }
             });
-        }, { threshold: 0.25 });
+        }, { threshold: 0.5 });
 
         frames.forEach(frame => observer.observe(frame));
     }
@@ -94,15 +107,33 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         });
 
-        closeBtn.addEventListener("click", () => {
+        function closeLightbox() {
             lightbox.classList.remove("active");
             document.body.style.overflow = "";
-        });
+        }
+
+        closeBtn.addEventListener("click", closeLightbox);
 
         lightbox.addEventListener("click", (e) => {
-            if (e.target === lightbox) {
-                lightbox.classList.remove("active");
-                document.body.style.overflow = "";
+            if (e.target === lightbox) closeLightbox();
+        });
+
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") closeLightbox();
+        });
+    }
+
+    /* ================= REEL SOUND (FIRST SCROLL ONLY) ================= */
+
+    const reelSound = document.getElementById("reelSound");
+    let reelPlayed = false;
+
+    if (reelSound) {
+        window.addEventListener("scroll", () => {
+            if (!reelPlayed && window.scrollY > 120) {
+                reelSound.volume = 0.25;
+                reelSound.play().catch(() => {});
+                reelPlayed = true;
             }
         });
     }
