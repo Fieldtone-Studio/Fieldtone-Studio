@@ -407,13 +407,20 @@ body.loading {
     font-family: monospace;
     font-size: 0.85rem;
     letter-spacing: 4px;
-    opacity: 0.18;
     pointer-events: none;
+}
+
+.film-counter span {
+    color: rgba(255,255,255,0.2);
+    transition: 
+        color 0.4s ease,
+        transform 0.4s ease,
+        opacity 0.4s ease;
 }
 
 .film-counter span.active {
     color: #e0462e;
-    opacity: 1;
+    transform: scale(1.2);
 }
 
 /* ================= FILM DUST ================= */
