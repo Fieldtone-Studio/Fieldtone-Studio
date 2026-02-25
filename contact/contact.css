@@ -96,13 +96,33 @@
 }
 
 input, select, textarea{
-    background:transparent;
+    background:#0b0b0b; /* change from transparent */
     border:1px solid rgba(255,255,255,.1);
     padding:14px;
     border-radius:8px;
     color:var(--text);
     font-size:1rem;
     transition:.3s;
+}
+
+/* ================= SELECT DROPDOWN FIX ================= */
+
+select {
+    appearance: none;
+    background-color: #0b0b0b;
+    color: var(--text);
+}
+
+/* Dropdown options styling */
+select option {
+    background-color: #0b0b0b;
+    color: #f2f2f2;
+}
+
+/* Hover effect (supported in some browsers) */
+select option:hover {
+    background-color: var(--accent);
+    color: #ffffff;
 }
 
 input:focus,
@@ -158,4 +178,5 @@ select:focus{
     .contact-hero h1{
         font-size:2rem;
     }
+
 }
