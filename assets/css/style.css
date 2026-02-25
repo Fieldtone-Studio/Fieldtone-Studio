@@ -545,6 +545,28 @@ body.loading {
     filter: brightness(0) saturate(100%) invert(34%) sepia(90%) saturate(1800%) hue-rotate(345deg) brightness(95%) contrast(90%);
 }
 
+/* ================= FIELD TONE SCROLLBAR ================= */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0b0b0b;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #e0462e;
+    border-radius: 10px;
+    box-shadow: 0 0 8px rgba(224, 70, 46, 0.4);
+    transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ff5a3c;
+    box-shadow: 0 0 14px rgba(224, 70, 46, 0.7);
+}
+
 /* ================= DISABLE CUSTOM CURSOR ON TOUCH DEVICES ================= */
 
 @media (hover: none) and (pointer: coarse) {
