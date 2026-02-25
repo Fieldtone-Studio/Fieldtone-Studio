@@ -7,7 +7,7 @@
 
 <meta name="description" content="Start a project with Fieldtone. Cinematic architectural visualization inquiries.">
 
-<link rel="icon" href=/assets/img/FIELDTONE_Favicon_Colored_BG.jpg>
+<link rel="icon" type="image/jpeg" href="assets/img/FIELDTONE_Favicon_Colored_BG.jpg">
 
 <!-- Global CSS (cursor, scrollbar, fade, etc.) -->
 <link rel="stylesheet" href="/assets/css/style.css">
@@ -40,42 +40,51 @@
 
 <section class="contact-form-section">
 
-<form class="contact-form">
+<form class="contact-form"
+      action="https://formspree.io/f/xykdlvoy"
+      method="POST">
+
+    <!-- Redirect after successful submit -->
+    <input type="hidden" name="_redirect" value="https://fieldtone-studio.com/contact/thank-you.html">
+
+    <!-- Optional subject line in inbox -->
+    <input type="hidden" name="_subject" value="New Fieldtone Project Inquiry">
 
     <div class="field">
-        <label>Your Name</label>
-        <input type="text" required>
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" required>
     </div>
 
     <div class="field">
-        <label>Email Address</label>
-        <input type="email" required>
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required>
     </div>
 
     <div class="field">
-        <label>Company / Studio</label>
-        <input type="text">
+        <label for="company">Company / Studio</label>
+        <input type="text" id="company" name="company">
     </div>
 
     <div class="field">
-        <label>Project Type</label>
-        <select>
-            <option>Residential</option>
-            <option>Commercial</option>
-            <option>Urban / Masterplan</option>
-            <option>Interior</option>
-            <option>Other</option>
+        <label for="project_type">Project Type</label>
+        <select id="project_type" name="project_type" required>
+            <option value="" disabled selected>Select project type</option>
+            <option value="Residential">Residential</option>
+            <option value="Commercial">Commercial</option>
+            <option value="Urban / Masterplan">Urban / Masterplan</option>
+            <option value="Interior">Interior</option>
+            <option value="Other">Other</option>
         </select>
     </div>
 
     <div class="field">
-        <label>Estimated Timeline</label>
-        <input type="text" placeholder="e.g. 6–8 weeks">
+        <label for="timeline">Estimated Timeline</label>
+        <input type="text" id="timeline" name="timeline" placeholder="e.g. 6–8 weeks">
     </div>
 
     <div class="field full">
-        <label>Project Description</label>
-        <textarea rows="6" required></textarea>
+        <label for="description">Project Description</label>
+        <textarea id="description" name="description" rows="6" required></textarea>
     </div>
 
     <button type="submit" class="submit-btn">
@@ -100,3 +109,4 @@
 </body>
 
 </html>
+
