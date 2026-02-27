@@ -99,32 +99,97 @@
 
 <section class="careers-departments">
 
-    <h2>Departments</h2>
+<h2>Departments</h2>
 
-    <div class="department">
-        <h3>Visualization</h3>
-        <p>Senior Visualization Artist · Junior Artist · Environment Specialist</p>
-    </div>
+<div class="department">
 
-    <div class="department">
-        <h3>VFX & Simulation</h3>
-        <p>FX Artist · Technical Artist</p>
-    </div>
+<h3>Visualization</h3>
 
-    <div class="department">
-        <h3>Post Production</h3>
-        <p>Colorist · Compositor</p>
+<div class="role-item">
+    <button class="role-toggle">
+        Senior Visualization Artist
+        <span class="arrow"></span>
+    </button>
+    <div class="role-content">
+        <p>8+ years experience. Mastery of lighting, composition, and material storytelling. Deep understanding of architectural intent. Ability to lead frames from whitecard to final.</p>
     </div>
+</div>
 
-    <div class="department">
-        <h3>Architectural Direction</h3>
-        <p>Art Director · Design Consultant</p>
+<div class="role-item">
+    <button class="role-toggle">
+        Junior Visualization Artist
+        <span class="arrow"></span>
+    </button>
+    <div class="role-content">
+        <p>Strong fundamentals in modeling and lighting. Curious, disciplined, and eager to grow inside a cinematic pipeline.</p>
     </div>
+</div>
 
-    <div class="department">
-        <h3>Production</h3>
-        <p>Production Lead · Project Manager</p>
+<div class="role-item">
+    <button class="role-toggle">
+        Environment Specialist
+        <span class="arrow"></span>
+    </button>
+    <div class="role-content">
+        <p>Expert in vegetation, atmospherics, and landscape storytelling. Deep understanding of Forest Pack and environmental realism.</p>
     </div>
+</div>
+
+</div>
+
+
+<div class="department">
+
+<h3>VFX & Simulation</h3>
+
+<div class="role-item">
+    <button class="role-toggle">
+        FX Artist
+        <span class="arrow"></span>
+    </button>
+    <div class="role-content">
+        <p>Experience in atmospheric simulation, rain, mist, subtle motion. Strong cinematic eye.</p>
+    </div>
+</div>
+
+<div class="role-item">
+    <button class="role-toggle">
+        Technical Artist
+        <span class="arrow"></span>
+    </button>
+    <div class="role-content">
+        <p>Pipeline development, scripting, optimization. Precision-driven mindset.</p>
+    </div>
+</div>
+
+</div>
+
+
+<div class="department">
+
+<h3>Post Production</h3>
+
+<div class="role-item">
+    <button class="role-toggle">
+        Colorist
+        <span class="arrow"></span>
+    </button>
+    <div class="role-content">
+        <p>Advanced understanding of color theory and cinematic grading. Emotion through tone.</p>
+    </div>
+</div>
+
+<div class="role-item">
+    <button class="role-toggle">
+        Compositor
+        <span class="arrow"></span>
+    </button>
+    <div class="role-content">
+        <p>Expert in blending CG and atmosphere. Invisible enhancements only.</p>
+    </div>
+</div>
+
+</div>
 
 </section>
 
@@ -152,11 +217,20 @@
     <p>Cinematic visuals that move hearts — and move properties.</p>
 </footer>
 
-<!-- Global JS -->
+<!-- Global JS (cursor, scroll, system logic) -->
 <script src="/assets/js/main.js"></script>
 
-</body>
+<!-- Careers accordion JS -->
+<script>
+document.querySelectorAll(".role-toggle").forEach(button => {
+    button.addEventListener("click", () => {
+        const roleItem = button.parentElement;
+        roleItem.classList.toggle("active");
+    });
+});
+</script>
 
+</body>
 </html>
 
 
