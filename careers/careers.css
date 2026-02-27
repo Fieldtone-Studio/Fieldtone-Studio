@@ -265,4 +265,45 @@
     max-height:300px;
   }
 
+    .role-content{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .4s ease;
+}
+
+.role-item.active .role-content{
+    max-height:800px;
+}
+
+.role-content ul{
+    padding:0 0 20px 20px;
+    color:var(--muted);
+}
+
+.role-toggle{
+    width:100%;
+    background:none;
+    border:none;
+    color:var(--text);
+    padding:16px 0;
+    text-align:left;
+    font-size:1rem;
+    display:flex;
+    justify-content:space-between;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.role-toggle:hover{
+    color:var(--accent);
+}
+
+.arrow{
+    transition:transform .3s ease;
+}
+
+.role-item.active .arrow{
+    transform:rotate(45deg);
+    }
+
 }
