@@ -210,4 +210,59 @@
     .portrait-grid{
         gap:30px;
     }
+
+    /* Role Accordion */
+
+.role-item{
+    margin-bottom:18px;
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.role-toggle{
+    width:100%;
+    background:none;
+    border:none;
+    color:var(--text);
+    font-size:1rem;
+    text-align:left;
+    padding:14px 0;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.role-toggle:hover{
+    color:var(--accent);
+}
+
+.arrow{
+    width:8px;
+    height:8px;
+    border-right:2px solid var(--accent);
+    border-bottom:2px solid var(--accent);
+    transform:rotate(45deg);
+    transition:.3s;
+}
+
+.role-item.active .arrow{
+    transform:rotate(225deg);
+}
+
+.role-content{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .4s ease;
+}
+
+.role-content p{
+    color:var(--muted);
+    padding-bottom:16px;
+}
+
+.role-item.active .role-content{
+    max-height:300px;
+  }
+
 }
