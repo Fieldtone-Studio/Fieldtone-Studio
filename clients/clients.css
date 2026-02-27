@@ -180,10 +180,25 @@ h2{
 
 /* MOBILE */
 
-@media(max-width:900px){
+@media (max-width:900px){
 
     .clients-nav nav{
         display:none;
+    }
+
+    .clients-hero{
+        background-position: 35% center;
+        height: 90vh;
+    }
+
+    .hero-overlay{
+        background:
+        linear-gradient(
+            to bottom,
+            rgba(0,0,0,.92),
+            rgba(0,0,0,.82) 40%,
+            rgba(0,0,0,.96)
+        );
     }
 
     .hero-content h1{
