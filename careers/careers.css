@@ -1,0 +1,213 @@
+:root{
+    --accent:#e0462e;
+    --bg:#080808;
+    --text:#f2f2f2;
+    --muted:#9a9a9a;
+}
+
+.careers-page{
+    background:var(--bg);
+    color:var(--text);
+    font-family:Inter,system-ui;
+}
+
+/* NAV */
+
+.careers-nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    padding:20px 6vw;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(0,0,0,.65);
+    backdrop-filter:blur(8px);
+    z-index:1000;
+}
+
+.careers-nav img{
+    width:140px;
+}
+
+.careers-nav nav a{
+    margin-left:28px;
+    text-decoration:none;
+    color:var(--text);
+    opacity:.7;
+    transition:.3s;
+}
+
+.careers-nav nav a:hover,
+.careers-nav nav a.active{
+    color:var(--accent);
+    opacity:1;
+}
+
+/* HERO */
+
+.careers-hero{
+    padding:180px 20px 80px;
+    text-align:center;
+    max-width:900px;
+    margin:auto;
+}
+
+.careers-hero h1{
+    font-size:2.8rem;
+    margin-bottom:20px;
+}
+
+.careers-hero p{
+    color:var(--muted);
+    line-height:1.6;
+}
+
+.hero-underline{
+    width:120px;
+    height:3px;
+    background:var(--accent);
+    margin:30px auto 0;
+}
+
+/* PHILOSOPHY */
+
+.careers-philosophy{
+    padding:80px 8vw;
+    text-align:center;
+}
+
+.careers-philosophy h2{
+    margin-bottom:20px;
+}
+
+.careers-philosophy p{
+    color:var(--muted);
+    max-width:700px;
+    margin:auto;
+}
+
+/* PORTRAITS */
+
+.careers-portrait-section{
+    padding:60px 6vw 100px;
+}
+
+.portrait-grid{
+    display:grid;
+    gap:50px;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+}
+
+.portrait-card{
+    text-align:center;
+}
+
+.portrait-img{
+    aspect-ratio:1305/2000;
+    background:#111;
+    overflow:hidden;
+    border-radius:12px;
+    box-shadow:0 20px 60px rgba(0,0,0,.6);
+}
+
+.portrait-img img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.portrait-meta{
+    margin-top:18px;
+}
+
+.role{
+    font-size:.75rem;
+    text-transform:uppercase;
+    letter-spacing:.12em;
+    color:var(--muted);
+}
+
+.name{
+    font-size:1.1rem;
+    margin-top:6px;
+}
+
+/* DEPARTMENTS */
+
+.careers-departments{
+    padding:100px 8vw;
+    max-width:900px;
+    margin:auto;
+}
+
+.careers-departments h2{
+    margin-bottom:40px;
+}
+
+.department{
+    margin-bottom:40px;
+}
+
+.department h3{
+    color:var(--accent);
+    margin-bottom:10px;
+}
+
+.department p{
+    color:var(--muted);
+}
+
+/* APPLY */
+
+.careers-apply{
+    padding:120px 20px;
+    text-align:center;
+}
+
+.careers-apply p{
+    color:var(--muted);
+}
+
+.apply-email{
+    display:inline-block;
+    margin-top:20px;
+    font-size:1.2rem;
+    color:var(--accent);
+    text-decoration:none;
+    transition:.3s;
+}
+
+.apply-email:hover{
+    text-shadow:0 0 12px rgba(224,70,46,.5);
+}
+
+/* FOOTER */
+
+.careers-footer{
+    padding:100px 20px;
+    text-align:center;
+    border-top:1px solid #1a1a1a;
+}
+
+.careers-footer img{
+    width:140px;
+    margin-bottom:20px;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+    .careers-nav nav{
+        display:none;
+    }
+
+    .careers-hero h1{
+        font-size:2rem;
+    }
+
+    .portrait-grid{
+        gap:30px;
+    }
+}
