@@ -21,6 +21,39 @@
     z-index:1000;
 }
 
+/* ================= NAV ================= */
+
+.work-nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    padding:20px 6vw;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(0,0,0,.6);
+    backdrop-filter:blur(8px);
+    z-index:1000;
+}
+
+.ework-nav img{
+    width:140px;
+}
+
+.work-nav nav a{
+    margin-left:28px;
+    color:var(--text);
+    text-decoration:none;
+    opacity:.7;
+    transition:.3s;
+}
+
+.works-nav nav a:hover,
+.work-nav nav a.active{
+    color:var(--accent);
+    opacity:1;
+}
+
 .work-nav img{
     width:140px;
 }
@@ -109,5 +142,6 @@
     .panel-content h2{
         font-size:1.8rem;
     }
+
 
 }
