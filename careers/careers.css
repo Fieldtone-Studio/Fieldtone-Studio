@@ -181,17 +181,19 @@
     color:var(--accent);
 }
 
-/* Arrow */
+/* ===== Accordion Arrow (Clean Chevron) ===== */
+
 .arrow{
-    width:10px;
-    height:10px;
+    width:8px;
+    height:8px;
     border-right:2px solid var(--accent);
     border-bottom:2px solid var(--accent);
-    transform:rotate(45deg);
+    transform:rotate(45deg); /* down chevron */
     transition:transform .3s ease;
 }
 
-/* Closed by default */
+/* ===== Closed by default ===== */
+
 .role-content{
     max-height:0;
     overflow:hidden;
@@ -199,14 +201,15 @@
     transition:max-height .45s ease, opacity .25s ease;
 }
 
-/* Open state */
+/* ===== Open state ===== */
+
 .role-item.active .role-content{
-    max-height:1000px;
+    max-height:1200px; /* large enough for all bullet content */
     opacity:1;
 }
 
 .role-item.active .arrow{
-    transform:rotate(225deg);
+    transform:rotate(-135deg); /* up chevron (clean, not X) */
 }
 
 /* Bullet styling */
@@ -274,3 +277,4 @@
     }
 
 }
+
