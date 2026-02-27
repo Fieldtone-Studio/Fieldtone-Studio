@@ -101,6 +101,8 @@
 
 <h2>Departments</h2>
 
+<!-- ================= VISUALIZATION ================= -->
+
 <div class="department">
 
 <h3>Visualization</h3>
@@ -108,35 +110,58 @@
 <div class="role-item">
     <button class="role-toggle">
         Senior Visualization Artist
-        <span class="arrow"></span>
+        <span class="arrow">+</span>
     </button>
     <div class="role-content">
-        <p>8+ years experience. Mastery of lighting, composition, and material storytelling. Deep understanding of architectural intent. Ability to lead frames from whitecard to final.</p>
+        <ul>
+            <li>5+ years professional experience in architectural visualization.</li>
+            <li>Advanced mastery of 3ds Max + Corona Renderer (V-Ray accepted).</li>
+            <li>Strong Forest Pack & RailClone workflows.</li>
+            <li>Expert lighting, composition, and cinematic framing.</li>
+            <li>Deep understanding of architectural intent and storytelling.</li>
+            <li>Ability to lead projects from Whitecard → Color → Materials → Final.</li>
+            <li>Efficient AI integration for ideation and workflow enhancement.</li>
+            <li>Architecture, Design, or Art degree preferred.</li>
+        </ul>
     </div>
 </div>
 
 <div class="role-item">
     <button class="role-toggle">
         Junior Visualization Artist
-        <span class="arrow"></span>
+        <span class="arrow">+</span>
     </button>
     <div class="role-content">
-        <p>Strong fundamentals in modeling and lighting. Curious, disciplined, and eager to grow inside a cinematic pipeline.</p>
+        <ul>
+            <li>1–3 years experience in Archviz.</li>
+            <li>Strong fundamentals in modeling and lighting.</li>
+            <li>Working knowledge of 3ds Max + Corona.</li>
+            <li>Understanding of PBR materials and composition basics.</li>
+            <li>Curious, disciplined, eager to grow in a cinematic pipeline.</li>
+            <li>Architecture or Art-related education preferred.</li>
+        </ul>
     </div>
 </div>
 
 <div class="role-item">
     <button class="role-toggle">
         Environment Specialist
-        <span class="arrow"></span>
+        <span class="arrow">+</span>
     </button>
     <div class="role-content">
-        <p>Expert in vegetation, atmospherics, and landscape storytelling. Deep understanding of Forest Pack and environmental realism.</p>
+        <ul>
+            <li>Expert in vegetation and environmental storytelling.</li>
+            <li>Advanced Forest Pack distribution techniques.</li>
+            <li>Strong understanding of scale and natural realism.</li>
+            <li>Experience creating atmospheric depth in exterior scenes.</li>
+            <li>Portfolio must demonstrate outdoor mastery.</li>
+        </ul>
     </div>
 </div>
 
 </div>
 
+<!-- ================= VFX ================= -->
 
 <div class="department">
 
@@ -145,25 +170,36 @@
 <div class="role-item">
     <button class="role-toggle">
         FX Artist
-        <span class="arrow"></span>
+        <span class="arrow">+</span>
     </button>
     <div class="role-content">
-        <p>Experience in atmospheric simulation, rain, mist, subtle motion. Strong cinematic eye.</p>
+        <ul>
+            <li>Experience in atmospheric simulation (rain, mist, fog).</li>
+            <li>TyFlow, Phoenix FD, or similar tools preferred.</li>
+            <li>Subtle cinematic motion — never exaggerated effects.</li>
+            <li>Strong understanding of realism and timing.</li>
+        </ul>
     </div>
 </div>
 
 <div class="role-item">
     <button class="role-toggle">
         Technical Artist
-        <span class="arrow"></span>
+        <span class="arrow">+</span>
     </button>
     <div class="role-content">
-        <p>Pipeline development, scripting, optimization. Precision-driven mindset.</p>
+        <ul>
+            <li>Pipeline development and workflow optimization.</li>
+            <li>MAXScript or Python scripting experience.</li>
+            <li>Render farm workflow understanding.</li>
+            <li>Performance-driven mindset.</li>
+        </ul>
     </div>
 </div>
 
 </div>
 
+<!-- ================= POST ================= -->
 
 <div class="department">
 
@@ -172,20 +208,30 @@
 <div class="role-item">
     <button class="role-toggle">
         Colorist
-        <span class="arrow"></span>
+        <span class="arrow">+</span>
     </button>
     <div class="role-content">
-        <p>Advanced understanding of color theory and cinematic grading. Emotion through tone.</p>
+        <ul>
+            <li>Advanced cinematic grading knowledge.</li>
+            <li>DaVinci Resolve or advanced Photoshop grading.</li>
+            <li>Strong understanding of tone, contrast, and mood.</li>
+            <li>Emotion through color — never overprocessed.</li>
+        </ul>
     </div>
 </div>
 
 <div class="role-item">
     <button class="role-toggle">
         Compositor
-        <span class="arrow"></span>
+        <span class="arrow">+</span>
     </button>
     <div class="role-content">
-        <p>Expert in blending CG and atmosphere. Invisible enhancements only.</p>
+        <ul>
+            <li>Expert blending CG and live atmosphere.</li>
+            <li>Advanced Photoshop compositing.</li>
+            <li>After Effects knowledge a plus.</li>
+            <li>Invisible enhancements only.</li>
+        </ul>
     </div>
 </div>
 
@@ -222,16 +268,35 @@
 
 <!-- Careers accordion JS -->
 <script>
-document.querySelectorAll(".role-toggle").forEach(button => {
-    button.addEventListener("click", () => {
-        const roleItem = button.parentElement;
-        roleItem.classList.toggle("active");
+document.addEventListener("DOMContentLoaded", function(){
+
+    const roles = document.querySelectorAll(".role-item");
+
+    roles.forEach(role => {
+
+        const button = role.querySelector(".role-toggle");
+
+        button.addEventListener("click", function(){
+
+            if(role.classList.contains("active")){
+                role.classList.remove("active");
+                return;
+            }
+
+            roles.forEach(r => r.classList.remove("active"));
+
+            role.classList.add("active");
+
+        });
+
     });
+
 });
 </script>
 
 </body>
 </html>
+
 
 
 
