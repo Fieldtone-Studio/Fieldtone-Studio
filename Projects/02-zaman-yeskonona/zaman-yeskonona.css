@@ -1,0 +1,140 @@
+:root{
+    --accent:#e0462e;
+    --bg:#0a0a0a;
+    --text:#f2f2f2;
+    --muted:#b0b0b0;
+}
+
+.zaman-page{
+    background:var(--bg);
+    color:var(--text);
+    font-family:Inter, system-ui;
+    overflow-x:hidden;
+}
+
+/* NAV */
+
+.project-nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    padding:20px 6vw;
+    z-index:1000;
+}
+
+.project-nav img{
+    width:140px;
+}
+
+/* HERO */
+
+.zaman-hero{
+    position:relative;
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+}
+
+.hero-img{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    filter:brightness(.8);
+}
+
+.hero-overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(to bottom, rgba(0,0,0,.6), rgba(0,0,0,.85));
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    max-width:700px;
+    padding:0 20px;
+}
+
+.hero-content h1{
+    font-size:3rem;
+    letter-spacing:-0.5px;
+}
+
+.hero-content h2{
+    font-size:1.4rem;
+    opacity:.75;
+    margin-top:10px;
+    letter-spacing:.15em;
+}
+
+.subtitle{
+    margin-top:25px;
+    font-size:1.1rem;
+    color:var(--muted);
+}
+
+/* INTRO */
+
+.zaman-intro{
+    padding:120px 20px;
+    text-align:center;
+    max-width:750px;
+    margin:auto;
+}
+
+.zaman-intro p{
+    font-size:1.2rem;
+    line-height:1.8;
+    color:var(--muted);
+}
+
+/* STILLS */
+
+.zaman-stills img{
+    width:100%;
+    display:block;
+    margin:0;
+}
+
+/* FILM */
+
+.zaman-film{
+    padding:160px 20px;
+    text-align:center;
+    background:#000;
+}
+
+.zaman-film h3{
+    font-size:1.8rem;
+    margin-bottom:20px;
+}
+
+.zaman-film p{
+    color:var(--muted);
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+    .hero-content h1{
+        font-size:2rem;
+    }
+
+    .hero-content h2{
+        font-size:1.1rem;
+    }
+
+    .subtitle{
+        font-size:1rem;
+    }
+
+    .zaman-intro{
+        padding:80px 20px;
+    }
+
+}
