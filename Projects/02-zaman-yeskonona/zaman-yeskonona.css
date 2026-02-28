@@ -8,7 +8,7 @@
 .zaman-page{
     background:var(--bg);
     color:var(--text);
-    font-family:Inter, system-ui;
+    font-family:serif;
     overflow-x:hidden;
 }
 
@@ -166,3 +166,4 @@
     }
 
 }
+
