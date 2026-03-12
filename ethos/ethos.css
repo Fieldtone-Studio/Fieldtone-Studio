@@ -177,7 +177,15 @@
     display:block;
 }
 
-/* Leadership portrait larger */
+/* ================= LEADERSHIP ================= */
+
+/* Larger card width for leadership */
+
+.leadership .grid{
+    grid-template-columns:360px;
+}
+
+/* Leadership portrait */
 
 .leadership .card-portrait{
     aspect-ratio:2 / 3;
