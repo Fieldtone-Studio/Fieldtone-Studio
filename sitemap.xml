@@ -14,6 +14,24 @@
   </url>
 
   <url>
+    <loc>https://fieldtone-studio.com/work/stills.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://fieldtone-studio.com/work/film.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://fieldtone-studio.com/work/process.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
     <loc>https://fieldtone-studio.com/archvizography/archvizography.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
