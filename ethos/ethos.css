@@ -179,13 +179,13 @@
 
 /* Leadership portrait larger */
 
-.dept-group:first-of-type .card-portrait{
+.leadership .card-portrait{
     aspect-ratio:2 / 3;
 }
 
-/* Optional extra breathing room for leadership card */
+/* Extra breathing room for leadership card */
 
-.dept-group:first-of-type .card{
+.leadership .card{
     padding:32px;
 }
 
