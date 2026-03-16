@@ -48,7 +48,7 @@
 .clients-hero{
     position:relative;
     height:100vh;
-    background:url("img/clients-hero.webp") center/cover no-repeat;
+    background:url("../../Renders/08.jpg") center/cover no-repeat;
     display:flex;
     align-items:center;
     padding:0 8vw;
