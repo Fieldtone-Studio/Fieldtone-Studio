@@ -108,6 +108,10 @@
     padding:220px 20px 160px;
     text-align:center;
     background:#000;
+
+    /* BREAK OUT OF GLOBAL CONTAINER */
+    width:100vw;
+    margin-left:calc(50% - 50vw);
 }
 
 .film-content{
@@ -130,7 +134,8 @@
 /* Film container */
 
 .film-embed{
-    max-width:1400px;
+    width:100%;
+    max-width:1600px; /* pushed further */
     margin:0 auto;
     position:relative;
     aspect-ratio:16 / 9;
@@ -142,7 +147,7 @@
 .film-embed::before{
     content:"";
     position:absolute;
-    inset:-60px;
+    inset:-80px;
     background:radial-gradient(
         circle at center,
         rgba(255,255,255,0.06),
