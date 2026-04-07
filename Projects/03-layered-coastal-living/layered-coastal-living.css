@@ -84,12 +84,11 @@
     width:140px;
 }
 
-/* ===== HAMBURGER FIX (CRITICAL) ===== */
+/* ===== HAMBURGER FIX (FINAL & CORRECT) ===== */
 
-/* Ensure visibility always */
 .hamburger{
     position:relative;
-    z-index:2000;
+    z-index:3000;
 }
 
 /* Base lines */
@@ -102,18 +101,18 @@
     transition:all 0.3s ease;
 }
 
-/* ACTIVE STATE (X) — force it to work */
+/* ACTIVE STATE — FORCE VISIBILITY */
+.hamburger.active span{
+    background:#fff !important;
+}
+
+/* X transformation */
 .hamburger.active span:nth-child(1){
     transform:rotate(45deg) translate(5px,5px);
 }
 
 .hamburger.active span:nth-child(2){
     transform:rotate(-45deg) translate(5px,-5px);
-}
-
-/* Ensure color stays visible when menu is open */
-.menu-overlay.open ~ .navbar .hamburger span{
-    background:#fff;
 }
 
 /* ANIMATION */
