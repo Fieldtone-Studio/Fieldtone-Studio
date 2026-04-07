@@ -84,6 +84,38 @@
     width:140px;
 }
 
+/* ===== HAMBURGER FIX (CRITICAL) ===== */
+
+/* Ensure visibility always */
+.hamburger{
+    position:relative;
+    z-index:2000;
+}
+
+/* Base lines */
+.hamburger span{
+    display:block;
+    width:22px;
+    height:2px;
+    background:#fff;
+    margin:5px 0;
+    transition:all 0.3s ease;
+}
+
+/* ACTIVE STATE (X) — force it to work */
+.hamburger.active span:nth-child(1){
+    transform:rotate(45deg) translate(5px,5px);
+}
+
+.hamburger.active span:nth-child(2){
+    transform:rotate(-45deg) translate(5px,-5px);
+}
+
+/* Ensure color stays visible when menu is open */
+.menu-overlay.open ~ .navbar .hamburger span{
+    background:#fff;
+}
+
 /* ANIMATION */
 
 @keyframes fadeUp{
