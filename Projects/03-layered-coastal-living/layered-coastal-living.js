@@ -1,17 +1,17 @@
-// Select elements
-const hamburger = document.getElementById('hamburger');
-const menu = document.getElementById('menu');
+window.addEventListener("load", () => {
 
-// Safety check (prevents errors)
-if (hamburger && menu) {
+    /* HAMBURGER MENU */
 
-    hamburger.addEventListener('click', () => {
+    const hamburger = document.getElementById("hamburger");
+    const menu = document.getElementById("menu");
 
-        // Toggle active state on hamburger (for X animation)
-        hamburger.classList.toggle('active');
+    if(hamburger && menu){
 
-        // Toggle menu visibility
-        menu.classList.toggle('open');
-    });
+        hamburger.addEventListener("click", () => {
+            hamburger.classList.toggle("active");
+            menu.classList.toggle("open");
+        });
 
-}
+    }
+
+});
